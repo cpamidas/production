@@ -1,0 +1,51 @@
+h1 {
+    margin: 5px;
+}
+
+h3 {
+    margin-top: 50px;
+}
+
+#text {
+    width: 100px;
+}
+
+#calculate {
+    margin-top: 25px;
+    width: 639px;
+    font-size: 60px;
+}
+
+#resultblock {
+    display: none;
+}
+
+#fromcurrency {
+    margin-right: 10px;
+}
+
+#result {
+    margin-left: 10px;
+}
+
+p > span {
+    font-weight: bold;
+}
+
+.label {
+    margin-right: 5px;
+}
+
+.content { 
+    text-align: center;
+    width: 650px;
+    margin: 0 auto;
+}
+
+.elem {
+    margin-right: 35px;
+}
+
+.converter {
+    margin: 15px 0;
+}

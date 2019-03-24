@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валют online | midas</title>
+    
+    <link rel="stylesheet" href="converter.css">
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+
+            <h1>КОНВЕРТЕР ВАЛЮТ</h1>
+
+            <hr>
+            
+            <div class="converter">
+               
+                <span class="elem">
+                    <label class="label">Сумма:</label>
+                    <input type="text" name="amount" id="amount" placeholder="Введите сумму...">
+                </span>
+
+                <span class="elem">
+                    <label class="label">Ваша валюта:</label>
+                    <select id="from">
+
+                    </select>
+                </span>
+
+
+                <span class="elem">
+                    <label class="label">Валюта конвертации:</label>
+                    <select id="to">
+
+                    </select>
+                </span>
+                
+                <input type="button" id="calculate" value="КОНВЕРТИРОВАТЬ">
+                
+                
+                <div id="resultblock">
+                    <h3>РЕЗУЛЬТАТ</h3>
+
+                    <p>
+                        <span id="amountinresult"></span>
+                        <span id="fromcurrency"></span>
+                         ========> 
+                        <span id="result"></span>
+                        <span id="tocurrency"></span>
+                    </p>
+                    
+                    <hr>
+                </div>
+            
+            </div>
+            
+            
+
+        </div>
+    </div>
+    <script src="converter.js"></script>
+</body>
+</html>
