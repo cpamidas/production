@@ -13,7 +13,8 @@ h3 {
 #calculate {
     margin-top: 25px;
     width: 639px;
-    font-size: 60px;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
 #resultblock {
@@ -28,6 +29,16 @@ h3 {
     margin-left: 10px;
 }
 
+#left {
+    text-align: left;
+    margin-left: 66px;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: orangered;
+    display: none;
+}
+
 p > span {
     font-weight: bold;
 }
@@ -38,12 +49,16 @@ p > span {
 
 .content { 
     text-align: center;
-    width: 650px;
+    width: 700px;
     margin: 0 auto;
 }
 
 .elem {
     margin-right: 35px;
+}
+
+.lastelem {
+    margin-right: 0px;
 }
 
 .converter {
