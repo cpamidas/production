@@ -4,7 +4,7 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
 
 // нужно динамически задать курс доллара к гривне вытащить значение переменной из функции
-var defaultUsd = 1;
+var defaultUsd = 26.8;
 
 xhr.onreadystatechange = function (res) {
     if( xhr.readyState == 4) {
@@ -102,12 +102,22 @@ btn.onclick = function () {
 
         // считаем результат (кросскурс - прямые котировки)
         // если это BTC from или to - считаем с поправкой на курс доллара
-        if (fromValue == 'BTC' || toValue == 'BTC') {
-            var result = ((amount * fromDataBuy) / (amount * toDataBuy)) * amount * 26.8;
-            console.log(1);
+        
+        if (fromValue == 'BTC') {
+    
+            var result = ((fromDataBuy * defaultUsd) / toDataBuy) * amount;
+            console.log(1111111);
+            
+        } else if (toValue == 'BTC') {
+            
+            var result = (fromDataBuy / (toDataBuy * defaultUsd)) * amount 
+            console.log(2222222);
+            
         } else {
-            var result =  ((amount * fromDataBuy) / (amount * toDataBuy)) * amount;
-            console.log(2);
+            
+            var result = (fromDataBuy / toDataBuy) * amount;
+            console.log(3333333);
+            
         }
         
         // Подсчет для BTC, нужно динамически вывести курс USD ((amount * fromDataBuy) / (amount * toDataBuy)) * amount * 26.8   
@@ -118,7 +128,7 @@ btn.onclick = function () {
         inResult.appendChild(inResultText);
 
         // отображаем результирующий блок в html
-        document.getElementById('resultblock').style.display = 'block'; 
+        document.getElementById('resultblock').style.display = 'block';
         
     } else {
         // выводим подсказку '* введите сумму не равную 0'
@@ -126,3 +136,16 @@ btn.onclick = function () {
     }
    
 }
+
+/*
+
+if (fromValue == 'BTC' || toValue == 'BTC') {
+            var result = ((amount * fromDataBuy) / (amount * toDataBuy)) * amount * 26.8;
+            console.log(1);
+        } else {
+            var result =  ((amount * fromDataBuy) / (amount * toDataBuy)) * amount;
+            console.log(2);
+        }
+*/
+
+
