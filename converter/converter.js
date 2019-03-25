@@ -84,6 +84,7 @@ btn.onclick = function () {
     // выполняем проверку на пустое и неадекватное значение
     if (amount != null && amount != 0) {
         
+        var amountInResult = null;
         // получаем спан для введенной суммы
         var amountInResult = document.getElementById('amountinresult');
         // создаем ноду для введенной суммы
@@ -95,14 +96,14 @@ btn.onclick = function () {
         var fromCurrency = document.getElementById('fromcurrency');
         var fromCurrencyText = document.createTextNode(fromValue);
         fromCurrency.appendChild(fromCurrencyText);
-
+        
         var toCurrency = document.getElementById('tocurrency');
         var toCurrencyText = document.createTextNode(toValue);
         toCurrency.appendChild(toCurrencyText);
 
         // считаем результат (кросскурс - прямые котировки)
         // если это BTC from или to - считаем с поправкой на курс доллара
-        
+    
         if (fromValue == 'BTC') {
     
             var result = ((fromDataBuy * defaultUsd) / toDataBuy) * amount;
