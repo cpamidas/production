@@ -1,10 +1,13 @@
+var a = 3, b = "++a"; alert( 3 + eval(b) );
+
+
 var xhr = new XMLHttpRequest();
 
 // метод, адрес, запросы (синхронные или асинхронные) / true or false
 xhr.open('GET', 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
 
 // нужно динамически задать курс доллара к гривне вытащить значение переменной из функции
-var defaultUsd = 26.8;
+var defaultUsd = 0;
 
 xhr.onreadystatechange = function (res) {
     if( xhr.readyState == 4) {
@@ -43,6 +46,8 @@ function showCurrency (currency) {
         currencyTo.appendChild(currencyOption2);
         
     }
+    
+    defaultUsd = currency[0].buy;
 };
 
 // прописали переменные и значения для default состояния селектов
